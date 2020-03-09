@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v9M-4a-ST7">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="jJP-1j-kg8">
+            <objects>
+                <navigationController id="v9M-4a-ST7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="first" id="Yc6-Om-qOz"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="wec-IV-yoN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y99-8g-iC3" kind="relationship" relationship="rootViewController" id="hnO-J5-BNI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M8Z-UD-Vx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1175" y="3"/>
+        </scene>
+        <!--History Table View Controller-->
+        <scene sceneID="UUZ-Rk-Um9">
+            <objects>
+                <tableViewController id="cZE-lX-Fb2" customClass="HistoryTableViewController" customModule="WeedmapsChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="s55-qo-MtL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" textLabel="HGr-6J-v3Q" style="IBUITableViewCellStyleDefault" id="o3j-Aa-yat">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o3j-Aa-yat" id="yml-FE-IxZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HGr-6J-v3Q">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cZE-lX-Fb2" id="GFc-PP-qTt"/>
+                            <outlet property="delegate" destination="cZE-lX-Fb2" id="juy-50-Uq7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IXb-eg-anh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="-251"/>
+        </scene>
+        <!--Businesses Near You-->
+        <scene sceneID="C0t-B9-QU3">
+            <objects>
+                <viewController id="Y99-8g-iC3" customClass="HomeViewController" customModule="WeedmapsChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tU4-XT-RHp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MTz-7X-GS9">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7DQ-TB-51O">
+                                    <size key="itemSize" width="200" height="200"/>
+                                    <size key="estimatedItemSize" width="83" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SsX-Ve-kCn" firstAttribute="bottom" secondItem="MTz-7X-GS9" secondAttribute="bottom" id="2JA-Ay-b2p"/>
+                            <constraint firstItem="MTz-7X-GS9" firstAttribute="top" secondItem="SsX-Ve-kCn" secondAttribute="top" id="2jU-pe-Ifj"/>
+                            <constraint firstItem="MTz-7X-GS9" firstAttribute="leading" secondItem="SsX-Ve-kCn" secondAttribute="leading" id="UWL-0o-aoh"/>
+                            <constraint firstItem="SsX-Ve-kCn" firstAttribute="trailing" secondItem="MTz-7X-GS9" secondAttribute="trailing" id="f8h-sn-auk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SsX-Ve-kCn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Businesses Near You" id="TnG-pJ-5IY">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="HU4-Vi-t1e">
+                            <connections>
+                                <segue destination="cZE-lX-Fb2" kind="presentation" identifier="showHistory" id="qLc-MB-YcZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="MTz-7X-GS9" id="kXQ-ci-XNi"/>
+                        <segue destination="Cgp-x0-OVG" kind="show" identifier="showWebViewController" id="ebE-t3-Pog"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XIJ-E0-LPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-415" y="2"/>
+        </scene>
+        <!--Home Detail View Controller-->
+        <scene sceneID="AJf-3E-CbM">
+            <objects>
+                <viewController id="Cgp-x0-OVG" customClass="HomeDetailViewController" customModule="WeedmapsChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zlv-nO-b6D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uF6-ay-oXa">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ppL-Gs-Up1" firstAttribute="bottom" secondItem="uF6-ay-oXa" secondAttribute="bottom" id="JVR-De-yDs"/>
+                            <constraint firstItem="ppL-Gs-Up1" firstAttribute="trailing" secondItem="uF6-ay-oXa" secondAttribute="trailing" id="NC4-8s-KRY"/>
+                            <constraint firstItem="uF6-ay-oXa" firstAttribute="top" secondItem="ppL-Gs-Up1" secondAttribute="top" id="Pul-0D-1Xa"/>
+                            <constraint firstItem="uF6-ay-oXa" firstAttribute="leading" secondItem="ppL-Gs-Up1" secondAttribute="leading" id="vbE-Qg-77A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ppL-Gs-Up1"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="gpq-hZ-ypx"/>
+                    <connections>
+                        <outlet property="webView" destination="uF6-ay-oXa" id="4at-Xc-LKr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ev6-2P-Rxb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="433"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+    </resources>
+</document>
